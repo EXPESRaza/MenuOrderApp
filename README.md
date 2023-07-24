@@ -10,8 +10,14 @@ the customer can order by themselves with a tablet.
 
 ## Sub-tasks
 
-Test Swagger Api public methods (Completed)
-Create a skeleton app using Create React App (Completed)
+- Test Swagger Api public methods (**Completed**)
+- Create a skeleton app using Create React App (**Completed**)
+- Call the get MenuItem api and display a menu to the user (**Completed**)
+- Allow the user to select menu items and add them to their order (**Not Started**)
+- Allow user to modify their order before submission (remove menu items, increase the
+number of specific items, etc) (**Not Started**)
+- Display the total cost of the order with each edit (**Not Started**)
+- Submit the order to POST Order api and display the order number and item count (**Not Started**)
 
 ## Swagger UI Source
 
