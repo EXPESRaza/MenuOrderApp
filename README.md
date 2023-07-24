@@ -28,6 +28,11 @@ https://testmenuorderapi.azurewebsites.net/swagger/index.html
 - CORS issue while making call to the Swagger API (**Addressed**)
 - Duplicate menu items in the api response will probably cause in the Order call
 
+## UI Look-n-Feel (As of Now)
+
+![image](https://github.com/EXPESRaza/MenuOrderApp/assets/19290062/6b2bd5f0-39bf-4b10-962c-d1dd57fc8146)
+
+
 ## References
 
 OpenAI ChatGPT 
