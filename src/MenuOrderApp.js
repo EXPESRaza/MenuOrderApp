@@ -39,6 +39,42 @@ const MenuOrderApp = () => {
     }) 
   };
 
+  const submitOrder = async () => {
+    try {
+      const response = await axios.post(
+        "https://thingproxy.freeboard.io/fetch/https://testmenuorderapi.azurewebsites.net/Order",
+        [ 
+          {
+            "id": 6,
+            "category": "Sides",
+            "itemName": "Fries",
+            "price": 3.95
+          },
+          {
+            "id": 8,
+            "category": "Sides",
+            "itemName": "Salad",
+            "price": 2.95
+          },
+          {
+            "id": 10,
+            "category": "Drinks",
+            "itemName": "Coffee",
+            "price": 2.95
+          }
+        ],
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        }
+      );
+      console.log(response.data)
+    } catch (error) {
+      console.error("Error submit Order:", error);
+    }
+  };
+
   const addToOrder = (orderItem) => {
     console.log(orderItem);
     };
@@ -71,7 +107,7 @@ const MenuOrderApp = () => {
         </ul>
       </div>
       <hr />
-      <button >Submit Order</button>
+      <button onClick={submitOrder}>Submit Order</button>
     </div>
   );
 };
