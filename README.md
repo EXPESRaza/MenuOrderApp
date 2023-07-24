@@ -23,6 +23,11 @@ number of specific items, etc) (**Not Started**)
 
 https://testmenuorderapi.azurewebsites.net/swagger/index.html
 
+## Issues
+
+- CORS issue while making call to the Swagger API (**Addressed**)
+- Duplicate menu items in the api response will probably cause in the Order call
+
 ## References
 
 OpenAI ChatGPT 
