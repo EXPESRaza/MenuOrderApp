@@ -39,15 +39,37 @@ const MenuOrderApp = () => {
     }) 
   };
 
+  const addToOrder = (orderItem) => {
+    console.log(orderItem);
+    };
+
   return (
     <div>
       <h1>Menu Order App</h1>
       <button onClick={fetchMenuItems}>Fetch Menu Items</button>
+      <div>
       <ul>
-        {menuItems.map((menuItem) => (
-          <li key={menuItem.id}>{menuItem.id} - {menuItem.category} - {menuItem.itemName} - {menuItem.price}</li>
-        ))}
-      </ul>
+        <table>
+          <tbody>
+            <tr>
+              <td><b>ID</b></td>
+              <td><b>Category</b></td>
+              <td><b>Name</b></td>
+              <td><b>Price</b></td>
+            </tr>
+            {menuItems.map((menuItem) => (
+              <tr key={menuItem.id}>
+                <td>{menuItem.id}</td>
+                <td>{menuItem.category}</td>
+                <td>{menuItem.itemName}</td>
+                <td>{menuItem.price}</td>
+                <td><button  onClick={() => addToOrder(menuItem)}>Add to Order</button></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        </ul>
+      </div>
       <hr />
       <button >Submit Order</button>
     </div>
