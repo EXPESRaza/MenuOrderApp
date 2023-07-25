@@ -75,10 +75,46 @@ const MenuOrderApp = () => {
     }
   };
 
-  const addToOrder = (orderItem) => {
-    console.log(orderItem);
-    };
+  const addToOrder = (menuItem) => {
+    addToQuantity(menuItem, menuItems)
+  };
 
+  const addToQuantity = (menuItem) => {
+    if (menuItem.quantity == null)
+    {
+      menuItem.quantity = 0;
+    }
+    menuItem.quantity += 1;
+    setMenuItems([...menuItems]);
+    // console.log(menuItem);
+  };
+
+  const removeFromQuantity = (menuItem) => {
+    if (menuItem.quantity == null || menuItem.quantity <= 0)
+    {
+      menuItem.quantity = 0;
+    }
+    else
+    {
+      menuItem.quantity -= 1;
+    }
+    setMenuItems([...menuItems])
+    // console.log(menuItem);
+  };
+
+  const calculateTotalOrderCost = (menuItems) => {
+    var totalOrderCost = 0;
+    menuItems.forEach(menuItem => {
+      var { price = 0, quantity = 0 } = menuItem;
+      totalOrderCost += price * quantity;
+    });  
+    return totalOrderCost;
+  };
+
+  function currencyFormat(num) {
+    return '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  }
+  
   return (
     <div>
       <h1>Menu Order App</h1>
@@ -99,12 +135,24 @@ const MenuOrderApp = () => {
                 <td>{menuItem.category}</td>
                 <td>{menuItem.itemName}</td>
                 <td>{menuItem.price}</td>
-                <td><button  onClick={() => addToOrder(menuItem)}>Add to Order</button></td>
+                <td>
+                  <button onClick={() => addToOrder(menuItem)}>Add to Order</button>
+                  &nbsp;
+                  <button onClick={() => addToQuantity(menuItem)}>+</button>
+                  &nbsp;
+                  <label>{menuItem.quantity}</label>
+                  &nbsp;
+                  <button onClick={() => removeFromQuantity(menuItem)}>-</button>
+                  &nbsp;
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
         </ul>
+      </div>
+      <div>
+        <h3>Total Cost of the Order: {currencyFormat(calculateTotalOrderCost(menuItems))}</h3>
       </div>
       <hr />
       <button onClick={submitOrder}>Submit Order</button>
