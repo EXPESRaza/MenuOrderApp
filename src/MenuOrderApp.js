@@ -39,37 +39,43 @@ const MenuOrderApp = () => {
     }) 
   };
 
-  const submitOrder = async () => {
+  const submitOrder = async (menuItems) => {
     try {
+      let orderMenuItems = menuItems.filter((item) => {
+        if (item.quantity != null && item.quantity > 0)
+        {
+          return true;
+        }
+        else {
+          return false;
+        }
+      })
+
+      var orderMenuItemsForPost = []
+      orderMenuItems.forEach(item => {
+        let quantity = item.quantity
+        delete item.quantity;
+        if (quantity > 0) {
+          for (let i = 0; i < quantity; i++) {
+            orderMenuItemsForPost.push(item);
+          }
+        }
+      });
+
+      const postOrderJson = JSON.stringify(orderMenuItemsForPost);
+      console.log(postOrderJson);
+      
       const response = await axios.post(
         "https://thingproxy.freeboard.io/fetch/https://testmenuorderapi.azurewebsites.net/Order",
-        [ 
-          {
-            "id": 6,
-            "category": "Sides",
-            "itemName": "Fries",
-            "price": 3.95
-          },
-          {
-            "id": 8,
-            "category": "Sides",
-            "itemName": "Salad",
-            "price": 2.95
-          },
-          {
-            "id": 10,
-            "category": "Drinks",
-            "itemName": "Coffee",
-            "price": 2.95
-          }
-        ],
+        postOrderJson,
         {
           headers: {
             'Content-Type': 'application/json',
           }
         }
       );
-      console.log(response.data)
+      console.log(response.data);
+
     } catch (error) {
       console.error("Error submit Order:", error);
     }
@@ -155,7 +161,7 @@ const MenuOrderApp = () => {
         <h3>Total Cost of the Order: {currencyFormat(calculateTotalOrderCost(menuItems))}</h3>
       </div>
       <hr />
-      <button onClick={submitOrder}>Submit Order</button>
+      <button onClick={() => submitOrder(menuItems)}>Submit Order</button>
     </div>
   );
 };
