@@ -13,25 +13,47 @@ the customer can order by themselves with a tablet.
 - Test Swagger Api public methods (**Completed**)
 - Create a skeleton app using Create React App (**Completed**)
 - Call the get MenuItem api and display a menu to the user (**Completed**)
-- Allow the user to select menu items and add them to their order (**Not Started**)
+- Allow the user to select menu items and add them to their order (**Completed**)
 - Allow user to modify their order before submission (remove menu items, increase the
-number of specific items, etc) (**Not Started**)
-- Display the total cost of the order with each edit (**Not Started**)
+number of specific items, etc) (**Completed**)
+- Display the total cost of the order with each edit (**Completed**)
 - Submit the order to POST Order api and display the order number and item count (**Not Started**)
 
 ## Swagger UI Source
 
 https://testmenuorderapi.azurewebsites.net/swagger/index.html
 
+#### Sample Post Request JSON
+
+    [ 
+      {
+        "id": 6,
+        "category": "Sides",
+        "itemName": "Fries",
+        "price": 3.95
+      },
+      {
+        "id": 8,
+        "category": "Sides",
+        "itemName": "Salad",
+        "price": 2.95
+      },
+      {
+        "id": 10,
+        "category": "Drinks",
+        "itemName": "Coffee",
+        "price": 2.95
+      }
+    ]
+
 ## Issues
 
 - CORS issue while making call to the Swagger API (**Addressed**)
 - Duplicate menu items in the api response will probably cause in the Order call
 
-## UI Look-n-Feel (As of Now)
+## UI Look-n-Feel
 
-![image](https://github.com/EXPESRaza/MenuOrderApp/assets/19290062/6b2bd5f0-39bf-4b10-962c-d1dd57fc8146)
-
+![image](https://github.com/EXPESRaza/MenuOrderApp/assets/19290062/8b34ccff-0480-4275-a28b-37c089208acd)
 
 ## References
 
