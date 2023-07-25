@@ -45,6 +45,9 @@ https://testmenuorderapi.azurewebsites.net/swagger/index.html
         "price": 2.95
       }
     ]
+### Sample Post Response
+
+![image](https://github.com/EXPESRaza/MenuOrderApp/assets/19290062/d1f5c2dc-2fcb-4fa3-a0fe-511be05be672)
 
 ## Issues
 
@@ -53,7 +56,7 @@ https://testmenuorderapi.azurewebsites.net/swagger/index.html
 
 ## UI Look-n-Feel
 
-![image](https://github.com/EXPESRaza/MenuOrderApp/assets/19290062/8b34ccff-0480-4275-a28b-37c089208acd)
+![image](https://github.com/EXPESRaza/MenuOrderApp/assets/19290062/a8bec7a5-537c-4ad5-b1f5-bb8a84d7fe83)
 
 ## References
 
