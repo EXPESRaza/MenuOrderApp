@@ -23,6 +23,29 @@ number of specific items, etc) (**Completed**)
 
 https://testmenuorderapi.azurewebsites.net/swagger/index.html
 
+#### Sample Post Request JSON
+
+    [ 
+      {
+        "id": 6,
+        "category": "Sides",
+        "itemName": "Fries",
+        "price": 3.95
+      },
+      {
+        "id": 8,
+        "category": "Sides",
+        "itemName": "Salad",
+        "price": 2.95
+      },
+      {
+        "id": 10,
+        "category": "Drinks",
+        "itemName": "Coffee",
+        "price": 2.95
+      }
+    ]
+
 ## Issues
 
 - CORS issue while making call to the Swagger API (**Addressed**)
