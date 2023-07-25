@@ -28,10 +28,9 @@ https://testmenuorderapi.azurewebsites.net/swagger/index.html
 - CORS issue while making call to the Swagger API (**Addressed**)
 - Duplicate menu items in the api response will probably cause in the Order call
 
-## UI Look-n-Feel (As of Now)
+## UI Look-n-Feel
 
-![image](https://github.com/EXPESRaza/MenuOrderApp/assets/19290062/6b2bd5f0-39bf-4b10-962c-d1dd57fc8146)
-
+![image](https://github.com/EXPESRaza/MenuOrderApp/assets/19290062/8b34ccff-0480-4275-a28b-37c089208acd)
 
 ## References
 
