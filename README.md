@@ -17,7 +17,7 @@ the customer can order by themselves with a tablet.
 - Allow user to modify their order before submission (remove menu items, increase the
 number of specific items, etc) (**Completed**)
 - Display the total cost of the order with each edit (**Completed**)
-- Submit the order to POST Order api and display the order number and item count (**Not Started**)
+- Submit the order to POST Order api and display the order number and item count (**Completed**)
 
 ## Swagger UI Source
 
